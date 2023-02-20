@@ -102,7 +102,7 @@ namespace Module_9_HW_2
 
         public static void SortMaxMin(string[] array)
         {
-            IEnumerable<string> query = from word in array                          //готовое решение
+            IEnumerable<string> query = from word in array                          //готовое решение с просторов metanit
                                         orderby word.Substring(0, 1) descending
                                         select word;
 
