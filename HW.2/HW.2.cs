@@ -4,13 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+///
+///
+///Обработать ошибку можно так catch (UserException e) , но этот участок кода должен стоять до catch (Exception e). 
+///Тут можно более подробно ознакомится об исключениях 
+///https://docs.microsoft.com/ru-ru/dotnet/standard/exceptions/how-to-create-localized-exception-messages.
+///
+///
 namespace Module_9_HW_2
 {
     class ForEvent
     {
         public delegate void NumberEnteredDelegate(int number, string[] names);
         public event NumberEnteredDelegate NumberEnteredEvent;
-        public void Read()
+        public void ReadChoice()
         {
         link1:
             Console.Write(Environment.NewLine + "Выберете тип сортировки:" + Environment.NewLine + "А-Я (нажмите 1) или Я-А (нажмите 2): ");
@@ -69,7 +76,7 @@ namespace Module_9_HW_2
                 Console.Write(name + " ");
             }
             fE.NumberEnteredEvent += NamesForSort;
-            fE.Read();
+            fE.ReadChoice();
 
             Console.ReadKey();
         }
@@ -83,7 +90,7 @@ namespace Module_9_HW_2
             {
                 case 1:
                 Console.WriteLine($"Введено {choice}");
-                SortMaxMin(names);
+                SortMinMax(names);
                 break;
                 case 2:
                 Console.WriteLine($"Введено {choice}");
